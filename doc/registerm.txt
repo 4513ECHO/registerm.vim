@@ -3,14 +3,14 @@
 Author: Hibiki <mail@4513echo.dev>
 License: MIT License
 URL: https://github.com/4513ECHO/registerm.vim
-Last change: 2023 Jul 28
+Last change: 2023 Jul 30
 
 ==============================================================================
 CONTENTS                                                  *registerm-contents*
 
 Introduction						|registerm-introduction|
 Interface						|registerm-interface|
-  KEY MAPPINGS						|registerm-key-mappings|
+  Key Mappings						|registerm-key-mappings|
 About							|registerm-about|
 
 ==============================================================================
@@ -18,6 +18,13 @@ INTRODUCTION                                          *registerm-introduction*
 
 *registerm* ( *registerm.vim* ) is a plugin to insert the content of
 |registers| in |Terminal-mode|.
+
+This plugin absorbs the differences in |Terminal-mode| mapping between
+Vim/Neovim (Vim has builtin mapping |t_CTRL-W_quote|, but this plugin adjust
+the behavior of |linewise|).
+
+Also it supports |quote_=| which does not work in the example simulating
+|i_CTRL-R| in the Neovim help (see |t_CTRL-\_CTRL-O|).
 
 Vim v9.0.0934+ or Neovim v0.10.0+ is required.
 
@@ -36,7 +43,6 @@ KEY MAPPINGS                                          *registerm-key-mappings*
 
 <Plug>(registerm-getchar)                          *<Plug>(registerm-getchar)*
 	Insert the content of a register like |i_CTRL-R| in |Terminal-mode|.
-	|quote_=| is also supported well.
 
 ==============================================================================
 ABOUT                                                        *registerm-about*
